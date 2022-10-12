@@ -102,5 +102,11 @@ body {
   border-radius: 50%;
 }
 
+/* @media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+} */
+
 /* keys rgb(51,51,51) */
 /* word rgb(204,204,204) */

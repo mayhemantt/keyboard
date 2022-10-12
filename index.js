@@ -9,7 +9,7 @@ keys.forEach((e) => {
 });
 
 function onClickFun(key) {
-  console.log(key);
+  console.log('here1');
   let data = null;
   if (key.className == 'symbol' || key.classList[0] == 'symbol') {
     if (!shift) {
@@ -27,7 +27,7 @@ function onClickFun(key) {
       write.focus();
     }
   }
-
+  console.log('here2');
   // caps lock key
   if (key.className == 'capslock') {
     keys.forEach((e) => {
@@ -45,7 +45,6 @@ function onClickFun(key) {
     // let el = document.querySelector('capslock');
     // console.log(el, '---');
     if (capsLock) {
-      console.log('HERE');
       let el = document.querySelector('.capslock');
       el.children[0].classList.add('active');
     }
@@ -57,7 +56,7 @@ function onClickFun(key) {
     write.focus();
     return;
   }
-
+  console.log('here3');
   if (key.className == 'left-shift') {
     shift = !shift;
     keys.forEach((e) => {
@@ -73,22 +72,21 @@ function onClickFun(key) {
       }
     });
 
-    if (shift) {
-      console.log('HERE');
-      let el = document.querySelector('.left-shift');
-      el.children[0].classList.add('active');
-    }
+    // if (shift) {
+    //   console.log('HERE');
+    //   let el = document.querySelector('.left-shift');
+    //   el.children[0].classList.add('active');
+    // }
 
-    if (!shift) {
-      let el = document.querySelector('.left-shift');
-      el.children[0].classList.remove('active');
-    }
+    // if (!shift) {
+    //   let el = document.querySelector('.left-shift');
+    //   el.children[0].classList.remove('active');
+    // }
     return;
   }
-
+  console.log('here4');
   if (key.className == 'letter' || key.className == 'uppercase') {
     if (capsLock) {
-      console.log('uppercase');
       data = key.innerHTML.toUpperCase();
 
       keys.forEach((e) => {
@@ -104,14 +102,13 @@ function onClickFun(key) {
       write.focus();
     }
   }
-
+  console.log('here5');
   if (key.classList[0] == 'return') {
     data = '\n';
     write.focus();
   }
 
   if (key.classList[0] == 'space') {
-    console.log('first');
     data = ' ';
     write.focus();
   }
@@ -131,13 +128,12 @@ function onClickFun(key) {
   data = data.replace('&lt;', '<').replace('&gt;', '>');
 
   if (capsLock) {
-    console.log('HERE');
-    let el = document.querySelector('capslock');
+    let el = document.querySelector('.capslock');
     el.children[0].classList.add('active');
   }
 
   if (!capsLock) {
-    let el = document.querySelector('capslock');
+    let el = document.querySelector('.capslock');
     el.children[0].classList.remove('active');
   }
   board.value = board.value + data;
