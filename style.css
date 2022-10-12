@@ -20,11 +20,13 @@ body {
 #write {
   margin: 0 0 5px;
   padding: 5px;
-  width: 671px;
-  height: 120px;
+  max-width: 671px;
+  max-height: 120px;
   background: #fff;
   border: 1px solid #f9f9f9;
   margin-bottom: 3%;
+  height: 100%;
+  width: 100%;
 }
 
 #keyboard {
@@ -102,11 +104,62 @@ body {
   border-radius: 50%;
 }
 
-/* @media screen and (min-width: 480px) {
-  body {
-    background-color: lightgreen;
+@media screen and (max-width: 720px) {
+  #keyboard li {
+    float: left;
+    margin: 0 5px 5px 0;
+    width: 35px;
+    height: 35px;
+    line-height: 20px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #f9f9f9;
   }
-} */
+  #keyboard .space {
+    clear: left;
+    width: 600px;
+  }
 
+  #write {
+    margin: 0 0 5px;
+    padding: 5px;
+    max-width: 600px;
+    max-height: 100px;
+    background: #fff;
+    border: 1px solid #f9f9f9;
+    margin-bottom: 3%;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  #keyboard li {
+    float: left;
+    margin: 0 4px 4px 0;
+    width: 25px;
+    height: 25px;
+    line-height: 15px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #f9f9f9;
+  }
+  #keyboard .space {
+    clear: left;
+    width: 500px;
+  }
+
+  #write {
+    margin: 0 0 5px;
+    padding: 5px;
+    max-width: 500px;
+    max-height: 80px;
+    background: #fff;
+    border: 1px solid #f9f9f9;
+    margin-bottom: 3%;
+    height: 100%;
+    width: 100%;
+  }
+}
 /* keys rgb(51,51,51) */
 /* word rgb(204,204,204) */
