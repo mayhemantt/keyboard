@@ -1,5 +1,6 @@
-html {
+* {
   margin: 0;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -7,8 +8,33 @@ body {
   background: #eee;
 }
 
+.input {
+  margin-bottom: 20px;
+  border: 2px solid paleturquoise;
+  padding: 20px;
+}
+
+.head {
+  font-size: 12px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 680px;
+}
+
+.input .note {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 #container {
-  margin: 10px auto;
   width: 100vw;
   align-items: center;
   display: flex;
@@ -33,6 +59,10 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+  border: 1px solid #f9f9f9;
+  border-radius: 4px;
+  padding: 10px 0px 10px 10px;
+  background-color: #000000;
 }
 
 #keyboard li {
@@ -43,6 +73,7 @@ body {
   line-height: 40px;
   text-align: center;
   background: #fff;
+  border-radius: 2px;
   border: 1px solid #f9f9f9;
 }
 
@@ -84,7 +115,7 @@ body {
 
 #keyboard .space {
   clear: left;
-  width: 681px;
+  width: 660px;
 }
 
 .on {
@@ -93,7 +124,7 @@ body {
 
 .capslock {
   display: flex;
-  justify-content: row;
+  justify-content: center;
 }
 
 .active {
@@ -104,7 +135,7 @@ body {
   border-radius: 50%;
 }
 
-@media screen and (max-width: 720px) {
+/* @media screen and (max-width: 720px) {
   #keyboard li {
     float: left;
     margin: 0 5px 5px 0;
@@ -160,6 +191,6 @@ body {
     height: 100%;
     width: 100%;
   }
-}
+} */
 /* keys rgb(51,51,51) */
 /* word rgb(204,204,204) */

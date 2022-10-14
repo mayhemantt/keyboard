@@ -5,7 +5,22 @@
   </head>
   <body>
     <div id="container">
-      <textarea id="write" rows="6" cols="60" autofocus></textarea>
+      <div class="input">
+        <div class="note"><h3>Enter You Note Here.</h3></div>
+        <textarea id="write" rows="6" cols="60" autofocus></textarea>
+      </div>
+      <div class="buttons">
+        <div class="background-color">
+          <input type="color" id="backcolor" value="#000000" />
+          <label class="head">Keyboard Background color</label>
+        </div>
+
+        <div class="key-color">
+          <input type="color" id="keycolor" value="#fffff" />
+          <label class="head">Key color</label>
+        </div>
+      </div>
+
       <ul id="keyboard">
         <li class="symbol">
           <span class="off">`</span><span class="on">~</span>

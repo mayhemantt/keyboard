@@ -1,13 +1,35 @@
 let capsLock = false;
 let shift = false;
 
+let keyboard = document.querySelector('#keyboard');
 let keys = document.querySelectorAll('#keyboard li');
 let board = document.querySelector('#write');
+const keySound = new Audio('./Sound_KeyInSound.mpeg');
+
+let KeyboardBackgroundColor = document.querySelector('#backcolor');
+
+let keyColor = document.querySelector('#keycolor');
+
+KeyboardBackgroundColor.addEventListener('input', (e) => {
+  keyboard.style.backgroundColor = e.target.value;
+  console.log(keyboard);
+});
+
+keyColor.addEventListener('input', (e) => {
+  keys.forEach((key) => {
+    key.style.backgroundColor = e.target.value;
+  });
+});
 
 keys.forEach((e) => {
   e.addEventListener('click', () => onClickFun(e));
 });
 
+const playSound = () => {
+  keySound.pause();
+  keySound.currentTime = 0;
+  keySound.play();
+};
 function onClickFun(key) {
   let data = null;
   if (key.className == 'symbol' || key.classList[0] == 'symbol') {
@@ -143,6 +165,7 @@ function onClickFun(key) {
     let el = document.querySelector('.left-shift');
     el.children[0].classList.remove('active');
   }
+  playSound();
   board.value = board.value + data;
 }
 
