@@ -3,8 +3,12 @@ let shift = false;
 
 let keyboard = document.querySelector('#keyboard');
 let keys = document.querySelectorAll('#keyboard li');
-let board = document.querySelector('#write');
+let board;
 const keySound = new Audio('./Sound_KeyInSound.mpeg');
+
+function focusInputFunction(e) {
+  board = e;
+}
 
 let KeyboardBackgroundColor = document.querySelector('#backcolor');
 
@@ -12,7 +16,6 @@ let keyColor = document.querySelector('#keycolor');
 
 KeyboardBackgroundColor.addEventListener('input', (e) => {
   keyboard.style.backgroundColor = e.target.value;
-  console.log(keyboard);
 });
 
 keyColor.addEventListener('input', (e) => {
@@ -35,7 +38,7 @@ function onClickFun(key) {
   if (key.className == 'symbol' || key.classList[0] == 'symbol') {
     if (!shift) {
       data = key.children[0].innerHTML;
-      write.focus();
+      // write.focus();
     } else {
       data = key.children[1].innerHTML;
       shift = !shift;
@@ -45,7 +48,7 @@ function onClickFun(key) {
           e.children[1].classList.add('on');
         }
       });
-      write.focus();
+      // write.focus();
     }
   }
   // caps lock key
@@ -60,10 +63,7 @@ function onClickFun(key) {
         e.classList.remove('uppercase');
       }
     });
-    // toggle(keys, 'uppercase', 'letter', 'letter', 'uppercase');
     capsLock = !capsLock;
-    // let el = document.querySelector('capslock');
-    // console.log(el, '---');
     if (capsLock) {
       let el = document.querySelector('.capslock');
       el.children[0].classList.add('active');
@@ -73,7 +73,7 @@ function onClickFun(key) {
       let el = document.querySelector('.capslock');
       el.children[0].classList.remove('active');
     }
-    write.focus();
+    // write.focus();
     return;
   }
   if (key.className == 'left-shift') {
@@ -91,13 +91,11 @@ function onClickFun(key) {
       }
 
       if (shift) {
-        console.log('shift');
         let el = document.querySelector('.left-shift');
         el.children[0].classList.add('active');
       }
 
       if (!shift) {
-        console.log('no shift');
         let el = document.querySelector('.left-shift');
         el.children[0].classList.remove('active');
       }
@@ -115,34 +113,33 @@ function onClickFun(key) {
         }
       });
       capsLock = !capsLock;
-      write.focus();
+      // write.focus();
     } else {
       data = key.innerHTML;
-      write.focus();
+      // write.focus();
     }
   }
   if (key.classList[0] == 'return') {
     data = '\n';
-    write.focus();
+    // write.focus();
   }
 
   if (key.classList[0] == 'space') {
     data = ' ';
-    write.focus();
+    // write.focus();
   }
 
   if (key.classList == 'tab') {
     data = '\t';
-    write.focus();
+    // write.focus();
   }
 
   if (key.classList[0] == 'delete') {
     let htmlContent = board.value;
     board.value = htmlContent.substr(0, htmlContent.length - 1);
-    write.focus();
+    // write.focus();
     return;
   }
-  // console.log(data)
   data = data.replace('&lt;', '<').replace('&gt;', '>');
 
   if (capsLock) {
@@ -155,13 +152,11 @@ function onClickFun(key) {
     el.children[0].classList.remove('active');
   }
   if (shift) {
-    console.log('shift');
     let el = document.querySelector('.left-shift');
     el.children[0].classList.add('active');
   }
 
   if (!shift) {
-    console.log('no shift');
     let el = document.querySelector('.left-shift');
     el.children[0].classList.remove('active');
   }

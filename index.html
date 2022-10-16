@@ -2,25 +2,62 @@
 <html>
   <head>
     <link href="./style.css" rel="stylesheet" />
+    <link href="./test.css" rel="stylesheet" />
   </head>
   <body>
     <div id="container">
-      <div class="input">
-        <div class="note"><h3>Enter You Note Here.</h3></div>
-        <textarea id="write" rows="6" cols="60" autofocus></textarea>
-      </div>
-      <div class="buttons">
-        <div class="background-color">
-          <input type="color" id="backcolor" value="#000000" />
-          <label class="head">Keyboard Background color</label>
-        </div>
+      <div class="form_container">
+        <div class="title">Registration</div>
+        <form action="#">
+          <div class="user__details">
+            <div class="input__box">
+              <span class="details">Full Name</span>
+              <input
+                type="text"
+                class="name_input"
+                placeholder="E.g: John Smith"
+                required
+                onfocus="focusInputFunction(this)"
+              />
+            </div>
+            <div class="input__box">
+              <span class="details">Username</span>
+              <input
+                type="text"
+                class="username_input"
+                placeholder="johnWC98"
+                required
+                onfocus="focusInputFunction(this)"
+              />
+            </div>
+            <div class="input__box">
+              <span class="details">Email</span>
+              <input
+                type="email"
+                class="email_input"
+                placeholder="johnsmith@hotmail.com"
+                required
+                onfocus="focusInputFunction(this)"
+              />
+            </div>
+          </div>
+          <div class="button">
+            <input type="submit" value="Register" />
+          </div>
+        </form>
+        <div class="buttons">
+          <div class="background-color">
+            <input type="color" id="backcolor" value="#000000" />
+            <label class="head">Keyboard Background color</label>
+          </div>
 
-        <div class="key-color">
-          <input type="color" id="keycolor" value="#fffff" />
-          <label class="head">Key color</label>
+          <div class="key-color">
+            <input type="color" id="keycolor" value="#eeeeee" />
+            <label class="head">Key color</label>
+          </div>
         </div>
       </div>
-
+      <!-- <div class=> -->
       <ul id="keyboard">
         <li class="symbol">
           <span class="off">`</span><span class="on">~</span>
@@ -122,9 +159,9 @@
         <li class="symbol">
           <span class="off">/</span><span class="on">?</span>
         </li>
-        <!-- <li class="right-shift lastitem">shift</li> -->
         <li class="space lastitem">&nbsp;</li>
       </ul>
+      <!-- </div> -->
     </div>
     <script src="./index.js"></script>
   </body>
